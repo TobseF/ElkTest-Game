@@ -27,6 +27,7 @@ class Player(val number: Int, val game: Game, val font: BitmapFont, x: Float) : 
         addActor(mooseSign)
 
         mooseSign.addAction(Actions.alpha(0F))
+        PlayerController(number, this::hit)
     }
 
     fun setSignPosition(y: Float) {
