@@ -8,8 +8,8 @@ but should be played on Android. It's designed for an
 Android tablet which has two buzzer attached to it.
 
 ### Screenshots
-[[https://raw.githubusercontent.com/wiki/TobseF/ElkTest-Game/images/screenshot-menu.png|alt=screenshot main menu]]
-[[https://github.com/TobseF/ElkTest-Game/wiki/images/screenshot-ingame.png|alt=screenshot ingame]]
+![screenshot main menu](https://github.com/TobseF/ElkTest-Game/wiki/images/screenshot-menu.png)  
+![screenshot in game](https://github.com/TobseF/ElkTest-Game/wiki/images/screenshot-ingame.png)
 
 
 > It's an older hardware project which I ported now from XTend code to Kotlin.
