@@ -22,10 +22,9 @@ class PlayerController(val buttonIndex: Int, val action: () -> Unit) : Controlle
 
     override fun buttonDown(controller: Controller, buttonIndex: Int): Boolean {
         if (this.buttonIndex == buttonIndex) {
-
+            action.invoke()
         }
         log("Button $buttonIndex on Controller $controller")
-        action.invoke()
         return false
     }
 }

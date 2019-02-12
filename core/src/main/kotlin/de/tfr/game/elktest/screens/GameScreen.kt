@@ -12,7 +12,8 @@ import de.tfr.game.elktest.model.interfaces.PlayerInputReciever
 import de.tfr.game.util.*
 import de.tfr.game.util.ImageUtil.newImageLinear
 
-class GameScreen(private val game: Game, val playerInput: PlayerInputReciever) : StagedScreenAdapter(Config.GAME_WIDTH,
+class GameScreen(private val game: Game, val playerInput: PlayerInputReciever, val inputConfig: InputConfig) :
+        StagedScreenAdapter(Config.GAME_WIDTH,
         Config.GAME_HEIGHT), PlayerInputListener {
 
 
@@ -50,8 +51,8 @@ class GameScreen(private val game: Game, val playerInput: PlayerInputReciever) :
         this.gameStart = newSound("game_start_de.mp3")
         this.textFont = newFont("score.fnt")
         this.scoreFont = newFont("score_big.fnt")
-        this.player1 = Player(1, game, scoreFont, 25F)
-        this.player2 = Player(2, game, scoreFont, 1020F)
+        this.player1 = Player(1, inputConfig.keyPlayerA, game, scoreFont, 25F)
+        this.player2 = Player(2, inputConfig.keyPlayerB, game, scoreFont, 1020F)
         this.player1.setSignPosition(120F)
         this.player2.setSignPosition(-200F)
         this.timer = MooseTimer(gameTime).apply {
@@ -95,7 +96,7 @@ class GameScreen(private val game: Game, val playerInput: PlayerInputReciever) :
     }
 
     private fun goToMainMenu() {
-        this.game.screen = MainMenuScreen(game, playerInput)
+        this.game.screen = MainMenuScreen(game, playerInput, inputConfig)
         this.dispose()
     }
 
