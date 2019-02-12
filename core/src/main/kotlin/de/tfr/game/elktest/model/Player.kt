@@ -11,7 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image
 import de.tfr.game.util.ImageUtil.newImageLinear
 import de.tfr.game.util.newTouchDownListener
 
-class Player(val number: Int, val game: Game, val font: BitmapFont, x: Float) : Group() {
+class Player(val number: Int, keyCode: Int, val game: Game, val font: BitmapFont, x: Float) : Group() {
 
     var hitListener: ((Player) -> Unit)? = null
 
@@ -27,7 +27,7 @@ class Player(val number: Int, val game: Game, val font: BitmapFont, x: Float) : 
         addActor(mooseSign)
 
         mooseSign.addAction(Actions.alpha(0F))
-        PlayerController(number, this::hit)
+        PlayerController(keyCode, this::hit)
     }
 
     fun setSignPosition(y: Float) {

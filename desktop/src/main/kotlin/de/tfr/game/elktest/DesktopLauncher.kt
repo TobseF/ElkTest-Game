@@ -3,6 +3,7 @@ package de.tfr.game.elktest
 import com.badlogic.gdx.Files.FileType
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration
+import de.tfr.game.elktest.model.InputConfig
 
 /**
  * Runs the elk test desktop game (on LWJGL).
@@ -28,6 +29,7 @@ object DesktopLauncher {
     }
 
     private fun createApplication(): LwjglApplication {
-        return LwjglApplication(ElkTestGame(), defaultConfig)
+        val inputConfig = InputConfig(keyPlayerA = 1, keyPlayerB = 2)
+        return LwjglApplication(ElkTestGame(inputConfig = inputConfig), defaultConfig)
     }
 }
